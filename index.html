@@ -39,12 +39,9 @@
             event.preventDefault();
             var formData = new FormData(this);
 
-            // Hide form, header, and paragraph
-            document.getElementById('emailForm').style.display = 'none';
+            // Hide header and form
             document.querySelector('h1').style.display = 'none';
-            document.querySelectorAll('p').forEach(function(p) {
-                p.style.display = 'none';
-            });
+            document.getElementById('emailForm').style.display = 'none';
 
             // Display thank you message
             document.getElementById('thankYouMessage').style.display = 'block';
