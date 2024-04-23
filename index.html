@@ -37,7 +37,6 @@
     <script>
         document.getElementById('emailForm').addEventListener('submit', function(event) {
             event.preventDefault();
-            var formData = new FormData(this);
 
             // Hide header and form
             document.querySelector('h1').style.display = 'none';
@@ -46,10 +45,6 @@
             // Display thank you message and paragraphs
             var thankYouMessage = document.getElementById('thankYouMessage');
             thankYouMessage.style.display = 'block';
-            thankYouMessage.querySelector('h2').style.display = 'block';
-            thankYouMessage.querySelectorAll('p').forEach(function(paragraph) {
-                paragraph.style.display = 'block';
-            });
         });
     </script>
 </body>
