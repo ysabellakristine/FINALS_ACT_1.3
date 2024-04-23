@@ -31,7 +31,7 @@
     <div id="thankYouMessage" style="display: none;">
         <h2>Thank You! By entering your email address, I now know it. </h2>
         <p>¯\_(ツ)_/¯</p>
-	<p>just kidding!</p>
+        <p>Just kidding!</p>
     </div>
 
     <script>
@@ -39,11 +39,15 @@
             event.preventDefault();
             var formData = new FormData(this);
 
-            // Simulate form submission, then display thank you message
-            setTimeout(function() {
-                document.getElementById('emailForm').style.display = 'none';
-                document.getElementById('thankYouMessage').style.display = 'block';
-            }, 1000); // Just to simulate a delay, replace with actual submission logic
+            // Hide form, header, and paragraph
+            document.getElementById('emailForm').style.display = 'none';
+            document.querySelector('h1').style.display = 'none';
+            document.querySelectorAll('p').forEach(function(p) {
+                p.style.display = 'none';
+            });
+
+            // Display thank you message
+            document.getElementById('thankYouMessage').style.display = 'block';
         });
     </script>
 </body>
