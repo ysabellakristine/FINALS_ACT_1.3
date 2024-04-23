@@ -29,22 +29,24 @@
     </form>
 
     <div id="thankYouMessage" style="display: none;">
-        <h2>Thank You! By entering your email address, I now know it. </h2>
-        <p>¯\_(ツ)_/¯</p>
+        <h2>Thank You! By entering your email address, I now know it. ¯\_(ツ)_/¯</p>
         <p>Just kidding!</p>
     </div>
 
     <script>
         document.getElementById('emailForm').addEventListener('submit', function(event) {
             event.preventDefault();
+            var formData = new FormData(this);
 
-            // Hide header and form
-            document.querySelector('h1').style.display = 'none';
+            // Hide form, header, and paragraph
             document.getElementById('emailForm').style.display = 'none';
+            document.querySelector('h1').style.display = 'none';
+            document.querySelectorAll('p').forEach(function(p) {
+                p.style.display = 'none';
+            });
 
-            // Display thank you message and paragraphs
-            var thankYouMessage = document.getElementById('thankYouMessage');
-            thankYouMessage.style.display = 'block';
+            // Display thank you message
+            document.getElementById('thankYouMessage').style.display = 'block';
         });
     </script>
 </body>
